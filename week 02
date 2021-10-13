@@ -1,0 +1,36 @@
+// C++ code
+//
+int i = 0;
+
+int sensorValue = 0;
+
+int Key1Pin = 2;
+
+int ledPin1 = 13;
+
+void setup()
+{
+  serial.begin(9600);
+  
+  pinMode(ledPin1, OUTPUT);
+  pinMode(Key1Pin, INPUT);
+}
+
+void loop()
+{
+  int Keystate=digitalRead(Key1Pin);
+  //sensorValue = 0;
+ // ledPin1 = 13;
+ // Key1Pin = 2;
+  if(Keystate==1)
+  {
+    serial.print("safe");
+    digitalwrite(ledPin1,LOW);
+  }else{
+    Serical.print("Detected");
+  digitalWrite(ledPin1, HIGH);
+  }
+  
+  Serical.println("");
+  delay(1000);
+}
